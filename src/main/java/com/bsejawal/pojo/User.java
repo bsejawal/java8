@@ -1,10 +1,11 @@
 package com.bsejawal.pojo;
 
 import java.util.List;
+//src/main/java/com/bsejawal/pojo/User.java
 
 public class User {
     private String name;
-    private Integer age = 30;
+    private Integer age;
     private List<String> phoneNumbers;
 
     public User(String name, Integer age, List<String> phoneNumbers) {
@@ -41,7 +42,7 @@ public class User {
     public String toString() {
         return "{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
+                ", age='" + age + '\'' +
                 ", phoneNumbers=" + phoneNumbers +
                 '}';
     }
