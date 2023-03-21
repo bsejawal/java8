@@ -1,5 +1,7 @@
 package com.bsejawal.java8.stream;
 
+import com.bsejawal.pojo.Employee;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,19 +16,8 @@ public class Stream03FilterAndMap {
                 new Employee(105, "Edward", 50000)
                 );
 
-        List<Integer> collect = employeeList.stream().filter(e -> e.salary < 40000).map(e -> e.salary).collect(Collectors.toList());
+        List<Integer> collect = employeeList.stream().filter(e -> e.getSalary() < 40000).map(e -> e.getSalary()).collect(Collectors.toList());
         System.out.println(collect);
     }
 }
 
-class Employee{
-    int empId;
-    String name;
-    int salary;
-
-    public Employee(int empId, String name, int salary) {
-        this.empId = empId;
-        this.name = name;
-        this.salary = salary;
-    }
-}
