@@ -1,4 +1,37 @@
-#Java 8 map() vs flatMap()
+#Java 8
+## Interview Questions
+### Question 1. Convert the following code into java8 functional equivalent
+```java
+    List<Integer> numbers = List.of(1,2,3,4,5);
+    int total = 0;
+    for(Integer i : numbers){
+        if(i % 2 == 0 )
+            total += i * i;
+    }
+
+```
+#### Answer <br />
+First approach:
+```java
+ int total = list.stream()
+                .mapToInt( i -> {
+                    if(i % 2 == 0)
+                        return i * i;
+                    else return 0;
+                        }
+
+                ).sum();
+    System.out.println("total = " + total);
+```
+Second approach:
+```java
+    int total = list.stream()
+        .filter(i-> i % 2 ==0)
+        .mapToInt(i -> i * i)
+        .sum();
+    System.out.println("total = " + total);
+```
+## map() vs flatMap()
 
 | map() | flatMap() |
 | :---------- | :----------|
