@@ -8,7 +8,8 @@ import java.util.stream.Collectors;
 
 public class GrouppingBy {
     public static void main(String[] args) {
-        findEmployeeNameGroupingByCity();
+//        findEmployeeNameGroupingByCity();
+        printTopSalaryEmployeeForEachDepartment();
 
     }
 
@@ -45,7 +46,14 @@ public class GrouppingBy {
      print top salary employee for each department
      */
     public static void printTopSalaryEmployeeForEachDepartment(){
-        Map<Integer, Employee> topSalariesEmployee
+        Map<Integer, Employee> topSalariesEmployee = getEmployeeData().stream()
+                .collect(
+                        Collectors.groupingBy(
+                                e-> e.getEmpDeptId(),
+                                Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingInt(e->e.getSalary())), Optional::get)
+                        )
+                );
+        System.out.println("topSalariesEmployee = " + topSalariesEmployee);
 
     }
 
