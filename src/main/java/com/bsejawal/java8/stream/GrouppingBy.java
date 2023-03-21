@@ -2,9 +2,8 @@ package com.bsejawal.java8.stream;
 
 import com.bsejawal.pojo.Employee;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 public class GrouppingBy {
@@ -40,8 +39,27 @@ public class GrouppingBy {
         Map<String, List<String>> groupBy1 = employees.stream()
                         .collect(Collectors.groupingBy(Employee::getCity, Collectors.mapping(Employee::getName, Collectors.toList())));
         System.out.println("groupBy1 = " + groupBy1);
+    }
+
+    /**
+     print top salary employee for each department
+     */
+    public static void printTopSalaryEmployeeForEachDepartment(){
+        Map<Integer, Employee> topSalariesEmployee
+
+    }
 
 
+    private static List<Employee> getEmployeeData() {
+        return Arrays.asList(
+                new Employee(101, "siva", 101, "active", 2000),
+                new Employee(102, "ready", 101, "active", 5000),
+                new Employee(103, "raju", 102, "inactive", 6000),
+                new Employee(104, "sunder", 102, "inaactive", 4000),
+                new Employee(105, "sunil", 103, "active", 3500),
+                new Employee(106, "sunath", 103, "inactive", 4200),
+                new Employee(107, "suresh", 104, "active", 2050)
+        );
     }
 
 }
