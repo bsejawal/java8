@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Stream03FilterAndMap {
+public class FilterAndMap {
     public static void main(String[] args) {
         List<Employee> employeeList = Arrays.asList(
                 new Employee(101, "Alex", 10000),

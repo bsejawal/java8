@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Stream02Map {
+public class MapJava8 {
     public static void main(String[] args) {
 
 
@@ -15,7 +15,7 @@ public class Stream02Map {
                 new User("1", "Bhesh", "password@123", "bsejawal@gmail.com"),
                 new User("2", "Seema", "seema@password", "simakhadka100@gmail.com"),
                 new User("3", "Omkala", "omkala@secretPassword", "omkalasejawal@gmail.com"),
-                new User("3", "Netra", "Netra@superSecretPassword", "netrasejwal@gmail.com")
+                new User("3", "Netra", "SecretPassword", "netrasejwal@gmail.com")
         );
 
 

@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 
-public class Stream05ParallelStream{
+public class ParallelStreamJava8{
   public static void main(String[] args) {
       List<Post> posts = fetchPosts();
       System.out.println(posts.size());

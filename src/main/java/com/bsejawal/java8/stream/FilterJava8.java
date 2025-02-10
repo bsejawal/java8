@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.OptionalDouble;
 import java.util.regex.Pattern;
 
-public class Stream01Filter {
+public class FilterJava8 {
 
     public static void main(String[] args) {
 

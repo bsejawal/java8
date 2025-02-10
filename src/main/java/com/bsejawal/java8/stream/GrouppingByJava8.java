@@ -3,10 +3,9 @@ package com.bsejawal.java8.stream;
 import com.bsejawal.pojo.Employee;
 
 import java.util.*;
-import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
-public class GrouppingBy {
+public class GrouppingByJava8 {
     public static void main(String[] args) {
 //        findEmployeeNameGroupingByCity();
         printTopSalaryEmployeeForEachDepartment();
