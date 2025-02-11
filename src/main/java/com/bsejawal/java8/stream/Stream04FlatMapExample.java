@@ -1,4 +1,4 @@
-package com.bsejawal.apps;
+package com.bsejawal.java8.stream;
 
 import com.bsejawal.pojo.User;
 
