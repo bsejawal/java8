@@ -1,4 +1,4 @@
-package com.bsejawal.executorservice;
+package com.bsejawal.thread.executorservice;
 
 import java.net.URI;
 import java.net.http.HttpClient;
