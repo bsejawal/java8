@@ -9,11 +9,11 @@ import java.util.stream.Collectors;
 public class FilterAndMap {
     public static void main(String[] args) {
         List<Employee> employeeList = Arrays.asList(
-                new Employee(101, "Alex", 10000),
-                new Employee(102, "Brian", 20000),
-                new Employee(103, "Charles", 30000),
-                new Employee(104, "David", 40000),
-                new Employee(105, "Edward", 50000)
+                Employee.builder().empId(101).name("Alex").salary(10000).build(),
+                Employee.builder().empId(102).name("Brian").salary(20000).build(),
+                Employee.builder().empId(103).name("Charles").salary(30000).build(),
+                Employee.builder().empId(104).name("David").salary(40000).build(),
+                Employee.builder().empId(105).name("Edward").salary(50000).build()
                 );
 
         List<Integer> collect = employeeList.stream().filter(e -> e.getSalary() < 40000).map(e -> e.getSalary()).collect(Collectors.toList());

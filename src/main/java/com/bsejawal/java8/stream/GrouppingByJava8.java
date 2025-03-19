@@ -27,10 +27,11 @@ public class GrouppingByJava8 {
     public static void findEmployeeNameGroupingByCity() {
 
         List<Employee> employees = Arrays.asList(
-                new Employee("Ram", "Des Moines"),
-                new Employee("Hari", "Fairfield"),
-                new Employee("Shyam", "Des Moines"),
-                new Employee("Gita", "Fairfield")
+                Employee.builder().name("Ram").city("Des Moines").build(),
+                Employee.builder().name("Hari").city("Fairfield").build(),
+                Employee.builder().name("James").city("Des Moines").build(),
+                Employee.builder().name("Jack").city("Fairfield").build(),
+                Employee.builder().name("John").city("Des Moines").build()
         );
         Map<String, List<Employee>> groupBy = employees.stream()
                 .collect(Collectors.groupingBy(Employee::getCity));
@@ -59,13 +60,12 @@ public class GrouppingByJava8 {
 
     private static List<Employee> getEmployeeData() {
         return Arrays.asList(
-                new Employee(101, "siva", 101, "active", 2000),
-                new Employee(102, "ready", 101, "active", 5000),
-                new Employee(103, "raju", 102, "inactive", 6000),
-                new Employee(104, "sunder", 102, "inaactive", 4000),
-                new Employee(105, "sunil", 103, "active", 3500),
-                new Employee(106, "sunath", 103, "inactive", 4200),
-                new Employee(107, "suresh", 104, "active", 2050)
+                Employee.builder().empId(102).name("ready").empDeptId(101).status("active").salary(5000).build(),
+                Employee.builder().empId(103).name("raju").empDeptId(102).status("inactive").salary(6000).build(),
+                Employee.builder().empId(104).name("sunder").empDeptId(102).status("inactive").salary(4000).build(),
+                Employee.builder().empId(105).name("sunil").empDeptId(103).status("active").salary(3500).build(),
+                Employee.builder().empId(106).name("sunath").empDeptId(103).status("inactive").salary(4200).build(),
+                Employee.builder().empId(107).name("suresh").empDeptId(104).status("active").salary(2050).build()
         );
     }
 
