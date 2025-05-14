@@ -1,5 +1,5 @@
 package com.bsejawal.java8.stream;
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,9 +12,7 @@ import java.util.List;
 public class Stream05ParallelStream{
   public static void main(String[] args) {
       List<Post> posts = fetchPosts();
-      System.out.println(posts.size());
-
-
+      System.out.println(posts.size() +" \n" + posts);
   }
 
 
@@ -38,9 +36,14 @@ public class Stream05ParallelStream{
                   response.append(readLine);
               }
               in.close();
-              Gson gson = new Gson();
-              Post[] posts = gson.fromJson(response.toString(), Post[].class);
-              return Arrays.asList(posts);
+              ObjectMapper objectMapper = new ObjectMapper();
+              try{
+                  Post[] posts = objectMapper.readValue(response.toString(), Post[].class);
+                  return Arrays.asList(posts);
+              }catch (IOException e){
+                  e.printStackTrace();
+              }
+
           } else {
               System.out.println("GET NOT WORKED : responseCode = " + responseCode);
 
@@ -52,51 +55,10 @@ public class Stream05ParallelStream{
   }
 }
 
-class Post{
-    private int userId;
-    private int id;
-    private String title;
-    private String body;
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-                "userId=" + userId +
-                ", id=" + id +
-                ", title='" + title + '\'' +
-                ", body='" + body + '\'' +
-                '}';
-    }
+record Post(
+     int userId,
+     int id,
+     String title,
+     String body
+){
 }
