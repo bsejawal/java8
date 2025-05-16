@@ -1,13 +1,13 @@
 package com.bsejawal.thread.completableFuture;
 
- record Employee (
+ public record Employee (
     String employeeId,
     String firstName,
     String lastName,
     String email,
     String gender,
     String newJoiner,
-    String learningPeding,
+    String learningPending,
     int salary,
     int rating
 ){}
