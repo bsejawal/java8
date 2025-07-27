@@ -1,6 +1,8 @@
 package com.bsejawal.util;
 
+import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class NumberUtil {
@@ -26,5 +28,20 @@ public class NumberUtil {
         return IntStream.range(0, count)
                 .map(i -> random.nextInt((max - min) + 1) + min)
                 .toArray();
+    }
+
+    public static void printArray(int[] nums){
+        String numsString = Arrays.stream(nums)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining(", "));
+        System.out.println(numsString);
+    }
+
+    public static int getTheFirstDigit(int number){
+        int output = Math.abs(number);
+        while(output >= 10){
+            output  /= 10;
+        }
+        return output;
     }
 }
