@@ -1,4 +1,4 @@
-package com.bsejawal.java8.stream.cheatsheet;
+package com.bsejawal.java8.stream.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

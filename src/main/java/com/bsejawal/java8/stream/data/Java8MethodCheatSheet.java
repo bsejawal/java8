@@ -1,9 +1,6 @@
-package com.bsejawal.java8.stream.cheatsheet;
-
-import com.google.gson.internal.bind.util.ISO8601Utils;
+package com.bsejawal.java8.stream.data;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Java8MethodCheatSheet {
