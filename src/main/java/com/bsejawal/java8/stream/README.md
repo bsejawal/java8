@@ -5,7 +5,7 @@
     2. Find name of the employee whose salary is Nth highest
     3. Find the count of employee in each Project where Employee can have many Project
     4. After finding count of employee in each Project print them like String[] projects = 'Banking System'=2, 'Healthcare Portal'=3
-    5. Return a Employee name only whose projectCode is P001 where Employee can have many Projects
+    5. Return an Employee name only whose projectCode is P001 where Employee can have many Projects
     6. Find the employee who has worked on the maximum number of distinct projects.
 
 2. Given a list of integers: `` List<Integer> list= Arrays.asList(10,15,8,49,25,98,98,15,32, 101, 1002) `` find out following using Stream APIs
@@ -25,7 +25,7 @@
            total += i * i;
       }
       ```
-    8. From a stream of numbers, generate all pairs (as a list of int arrays of size 2) whose sum is even.
+   9. From a stream of numbers, generate all pairs (as a list of int arrays of size 2) whose sum is even.
 ```
 Input example: [1, 2, 3, 4, 5]
 Output example: [(1,3), (2,4), (4,2), (3,1), ...]
@@ -33,14 +33,14 @@ Output example: [(1,3), (2,4), (4,2), (3,1), ...]
 
 3. What is the different between map() vs flatMap()
 
-| map() | flatMap() |
-| :---------- | :----------|
-It processes stream of values | It processes stream of stream values
-It does only mapping | It perform mapping as well as flattering
-It's mapper function produces single value for each input value.| It's mapper function produces multiple values for each input value
-It is a One-To-One mapping| It is a One-To-Many mapping
-Data Transformation: From stream to stream| Data Transformation: From Stream to Stream to Stream
-Use this method when the mapper function is producing a single value for each input value | Use this method when the mapper function is producing multiple values for each input value.
+| map()                                                                                     | flatMap()                                                                                   |
+|:------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
+| It processes stream of values                                                             | It processes stream of stream values                                                        |
+| It does only mapping                                                                      | It perform mapping as well as flattering                                                    |
+| It's mapper function produces single value for each input value.                          | It's mapper function produces multiple values for each input value                          |
+| It is a One-To-One mapping                                                                | It is a One-To-Many mapping                                                                 |
+| Data Transformation: From stream to stream                                                | Data Transformation: From Stream to Stream to Stream                                        |
+| Use this method when the mapper function is producing a single value for each input value | Use this method when the mapper function is producing multiple values for each input value. |
 
 4. From following list of string
    ``` List<String> list = Arrays.asList("apple", "apple", "banana", "apple", "orange", "orange", "banana", "apple", "orange", "orange") ```
